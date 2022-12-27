@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Nextwo.Models.Article>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Dashboard/Views/Shared/DashbordLayout.cshtml";
+}
+
+<h2>Articles</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Article</a>
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArticleImg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArticleTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArticleDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublishDate)
+            </th>
+
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                <img src="@Url.Content(item.ArticleImg)" alt="insimg" Style="width:100px;height:100px" />
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArticleTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArticleDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishDate)
+            </td>
+
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ArticleId" class="btn btn-warning">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.ArticleId" class="btn btn-success">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.ArticleId" class="btn btn-dark">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

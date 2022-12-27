@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Instructor>
+<!-- Our Agent Section-->
+<section id="aa-agents">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-agents-area">
+                    <div class="aa-title">
+                        <h2>Trainers</h2>
+                        <span></span>
+                        <p>Meet Our Team</p>
+                    </div>
+                    <!-- agents content -->
+                    <div class="aa-agents-content">
+                        <ul class="aa-agents-slider">
+                            @foreach (var item in Model)
+                            {
+                                <li>
+                                    <div class="aa-single-agents">
+                                        <div class="aa-agents-img">
+                                            <img src="@Url.Content(item.InstructorImg)" alt="instructor member image" Style="width:259px;height:300px">
+                                        </div>
+                                        <div class="aa-agetns-info">
+                                            <h4><a href="#">@item.InstructorName</a></h4>
+                                            <span>@item.InstructorPosition </span>
+                                            <div class="aa-agent-social">
+                                                <a href=""><i class="fa fa-facebook"></i></a>
+                                                <a href=""><i class="fa fa-twitter"></i></a>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Our Agent Section-->
+<div>
+
+    <a asp-action="Index" class="btn btn-primary" style="text-align:center;">Back to Home Page</a>
+</div>
+<br /><br />

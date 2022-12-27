@@ -1,0 +1,107 @@
+﻿@model Nextwo.Models.Course
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Dashboard/Views/Shared/DashbordLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CourseId" />
+            <div class="form-group">
+                <label asp-for="CourseName" class="control-label"></label>
+                <input asp-for="CourseName" class="form-control" />
+                <span asp-validation-for="CourseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseDesc" class="control-label"></label>
+                <textarea asp-for="CourseDesc" class="form-control"></textarea>
+                <span asp-validation-for="CourseDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartTime" class="control-label"></label>
+                <input asp-for="StartTime" class="form-control" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseHours" class="control-label"></label>
+                <input asp-for="CourseHours" class="form-control" />
+                <span asp-validation-for="CourseHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Venu" class="control-label"></label>
+                <select asp-for="Venu" class="form-control"></select>
+                <span asp-validation-for="Venu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseImg" class="control-label"></label>
+                <br />
+
+                <img src="@Url.Content(Model.CourseImg)" alt="Alternate Text" width="100" height="100" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BtnTxt" class="control-label"></label>
+                <input asp-for="BtnTxt" class="form-control" />
+                <span asp-validation-for="BtnTxt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceOfferDiscount" class="control-label"></label>
+                <input asp-for="PriceOfferDiscount" class="form-control" />
+                <span asp-validation-for="PriceOfferDiscount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreationDate" class="control-label"></label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsDeleted" /> @Html.DisplayNameFor(model => model.IsDeleted)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

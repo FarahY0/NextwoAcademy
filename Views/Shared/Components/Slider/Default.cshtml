@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Slider>
+    
+<!-- Start slider  -->
+<section id="aa-slider">
+    <div class="aa-slider-area">
+        <!-- Top slider -->
+        <div class="aa-top-slider">
+            <!-- Top slider single slide -->
+            @foreach (var item in Model)
+            {
+
+
+                <div class="aa-top-slider-single">
+                    <img src="@Url.Content(item.SliderImg)" alt="img">
+                    <!-- Top slider content -->
+                 
+                    <!-- / Top slider content -->
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- End slider  -->
+

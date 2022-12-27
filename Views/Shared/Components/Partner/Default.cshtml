@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Partner>
+<section id="aa-client-brand">
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-client-brand-area">
+                    <ul class="aa-client-brand-slider">
+                        @foreach (var item in Model)
+        {
+            <li>
+                <div class="aa-client-single-brand">
+                    <img src="@Url.Content(item.PartnerImg)" alt="brand image" width="150" height="150">
+                </div>
+            </li>
+
+        }
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

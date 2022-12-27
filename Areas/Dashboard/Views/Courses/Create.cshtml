@@ -1,0 +1,83 @@
+﻿@model Nextwo.Models.ViewModel.CourseViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Dashboard/Views/Shared/DashbordLayout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CourseName" class="control-label"></label>
+                <input asp-for="CourseName" class="form-control" />
+                <span asp-validation-for="CourseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseDesc" class="control-label"></label>
+                <textarea asp-for="CourseDesc" class="form-control"></textarea>
+                <span asp-validation-for="CourseDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StartTime" class="control-label"></label>
+                <input asp-for="StartTime" class="form-control" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseHours" class="control-label"></label>
+                <input asp-for="CourseHours" class="form-control" />
+                <span asp-validation-for="CourseHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Venu" class="control-label"></label>
+                <select asp-for="Venu" asp-items="@Html.GetEnumSelectList<Venus>()" class="form-control"></select>
+                <span asp-validation-for="Venu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseImg" class="control-label"></label>
+                <input type="file" asp-for="CourseImg" class="form-control" />
+                <span asp-validation-for="CourseImg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BtnTxt" class="control-label"></label>
+                <input asp-for="BtnTxt" class="form-control" />
+                <span asp-validation-for="BtnTxt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            
+           
+           
+            <div class="form-group">
+                <input type="submit" value="Add New Course" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

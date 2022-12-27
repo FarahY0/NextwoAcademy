@@ -1,0 +1,55 @@
+﻿@model Request
+@{
+    ViewData["Title"] = "RequestEnrollment";
+    Layout = "~/Areas/Dashboard/Views/Shared/DashbordLayout.cshtml";
+}
+
+
+
+
+<br />
+<br />
+<br />
+
+
+<div class="text-center mb-5">
+    <h1>Our Popular Courses</h1>
+</div>
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+
+            <img src="~/img/Courses/angular.png" style="width:22%" ;border-radius:15px" />
+            <img src="~/img/Courses/C_Sharp.png" style="width: 21%" />
+            <img src="~/img/Courses/js.jpeg" style="width: 26%" /><br />
+            <img src="~/img/Courses/Flutterr.png" style="width: 24%; height:165px" />
+            <img src="~/img/Courses/Java.png" style="width: 27%" />
+            <img src="~/img/Courses/Python.png" style="width: 25%" /><br />
+            <img src="~/img/Courses/React-native.png" style="width: 26%;height:185px" />
+            <img src="~/img/Courses/Sql1.jpg" style="width: 27%" />
+            <img src="~/img/Courses/Swift.jpg" style="width: 22%" />
+            <br />
+            <br />
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+@using (Html.BeginForm("AcceptRequest", "Home", FormMethod.Post))
+{
+    <input type="hidden" name="requestId" value="@Model.RequestId" />
+    <button type="submit">Accept</button>
+}
+@using (Html.BeginForm("Reject", "Home", FormMethod.Post))
+{
+    <input type="hidden" name="requestId" value="@Model.RequestId" />
+    <button type="submit">Reject</button>
+}
+
+@using (Html.BeginForm("PendingRequests", "Home", FormMethod.Post))
+{
+    <input type="hidden" name="requestId" value="@Model.RequestId" />
+    <button type="submit">Mark as Pending</button>
+}

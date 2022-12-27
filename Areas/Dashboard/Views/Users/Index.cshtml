@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Nextwo.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Dashboard/Views/Shared/DashbordLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.UserImg)
+            </th>*@
+            
+            <th>
+                @Html.DisplayNameFor(model => model.OrderStatus)
+            </th>
+          
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            @*<td>
+                <img src="@Url.Content(item.UserImg)" alt="insimg" Style="width:100px;height:100px" />
+            </td>*@
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UserId"    class="btn btn-warning">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.UserId" class="btn btn-success" >Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.UserId"  class="btn btn-dark"    >Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,113 @@
+﻿@model Nextwo.Models.Course
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Dashboard/Views/Shared/DashbordLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseDesc)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CourseDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Duration)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseHours)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CourseHours)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Venu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Venu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseImg)
+        </dt>
+        <dd>
+            @*@Html.DisplayFor(model => model.CourseImg)*@
+            <img src="@Url.Content(Model.CourseImg)" alt="Course img" width="100" height="100" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BtnTxt)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BtnTxt)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PriceOfferDiscount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PriceOfferDiscount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsDeleted)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CourseId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

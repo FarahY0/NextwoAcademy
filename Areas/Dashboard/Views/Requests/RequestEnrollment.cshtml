@@ -1,0 +1,17 @@
+﻿
+@using (Html.BeginForm("Accept", "Requests", FormMethod.Post))
+{
+    <input type="hidden" name="requestId" value="@Model.RequestId" />
+    <button type="submit">Accept</button>
+}
+@using (Html.BeginForm("Reject", "Requests", FormMethod.Post))
+{
+    <input type="hidden" name="requestId" value="@Model.RequestId" />
+    <button type="submit">Reject</button>
+}
+
+@using (Html.BeginForm("Pending", "Requests", FormMethod.Post))
+{
+    <input type="hidden" name="requestId" value="@Model.RequestId" />
+    <button type="submit">Mark as Pending</button>
+}

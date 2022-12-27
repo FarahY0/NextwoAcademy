@@ -1,0 +1,20 @@
+﻿.btn-profile {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+    .btn-profile:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }

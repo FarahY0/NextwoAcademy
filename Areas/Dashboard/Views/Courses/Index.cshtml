@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Nextwo.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Dashboard/Views/Shared/DashbordLayout.cshtml";
+}
+
+<h2>Courses List</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add Course</a>
+</p>
+<table class="table table-bordered table-hover" >
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseImg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <th>
+                <img src="@Url.Content(item.CourseImg)" alt="insimg" Style="width:100px;height:100px" />
+
+            </th>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+         
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CourseId" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.CourseId" class="btn btn-success">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.CourseId" class="btn btn-dark">Delete</a>
+                    
+
+                </td>
+            </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewData["Title"] = "First Page";
+}
+@*@await Component.InvokeAsync("User")*@
+@await Component.InvokeAsync("Slider")
+
+
+<!-- About us -->
+<section id="aa-about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-about-us-area">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="aa-about-us-left">
+                                <img src="~/img/aboutus.png" alt="image">
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="aa-about-us-right">
+                                <div class="aa-title">
+                                    <h2>About Us</h2>
+                                    <span></span>
+                                </div>
+                                <p style="font-size:27px">Nextwo Academy is a training academy that aims to train and empower programming graduates and fresh graduates with market skills on both the professional and practical sides, in collaboration with Jordanian universities, and then to provide job opportunities for qualified and trained graduates.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / About us -->
+
+@await Component.InvokeAsync("Course")
+<!-- Service section -->
+<section id="aa-service">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-service-area">
+                    <div class="aa-title">
+                        <h2>Our Service</h2>
+                        <span></span>
+                        <p>For IT companies that want to expand their team members efficiently in Jordan, we provide services not only office space and employees, in fact, we help all the way from the technical consultancy, team building, administrative services, managing finances and legal services, as well as other supportive services that are available per request.</p>
+                    </div>
+                    <!-- service content -->
+                    <div class="aa-service-content">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="aa-single-service">
+                                    <div class="aa-service-icon">
+                                        <span class="fa fa-search"></span>
+                                    </div>
+                                    <div class="aa-single-service-content">
+                                        <h4><a href="#">Identify Your Needs</a></h4>
+                                        <p> Proper planning and team sizing.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="aa-single-service">
+                                    <div class="aa-service-icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="aa-single-service-content">
+                                        <h4><a href="#">IT Platform</a></h4>
+                                        <p>Your team offices are fully equipped with technical devices .</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="aa-single-service">
+                                    <div class="aa-service-icon">
+                                        <span class="fa fa-cogs"></span>
+                                    </div>
+                                    <div class="aa-single-service-content">
+                                        <h4><a href="#">Managerial and HR Services</a></h4>
+                                        <p>We care about your employees and their services.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="aa-single-service">
+                                    <div class="aa-service-icon">
+                                        <span class="fa fa-calculator"></span>
+                                    </div>
+                                    <div class="aa-single-service-content">
+                                        <h4><a href="#">Accounting Services</a></h4>
+                                        <p>We manage all accounting services for your team.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Service section -->
+
+@await Component.InvokeAsync("Instructor")
+@await Component.InvokeAsync("Client")
+@await Component.InvokeAsync("Partner")
+@await Component.InvokeAsync("Article")
+
+
